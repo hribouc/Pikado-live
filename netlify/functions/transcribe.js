@@ -28,6 +28,7 @@ exports.handler = async (event) => {
    console.warn('Transcription failed', {httpStatus: response.status, code: String(code).replace(/[^a-z0-9_]/gi, '').slice(0, 60)});
    const descriptions = {
     invalid_api_key: 'OpenAI je zavrnil API ključ. Skrbnik mora v Netlify zamenjati vrednost OPENAI_API_KEY z veljavnim ključem in ponovno objaviti aplikacijo.',
+    credit_balance_exhausted: 'Na OpenAI API računu za ta ključ je porabljeno dobroimetje. Preveri Billing in dobroimetje organizacije, ki ji pripada ključ.',
     insufficient_quota: 'Na OpenAI API računu ni razpoložljivega dobroimetja oziroma obračunavanja.',
     billing_hard_limit_reached: 'Dosežena je omejitev porabe OpenAI API.',
     model_not_found: 'Model za prepoznavo ni na voljo za ta API račun.',
